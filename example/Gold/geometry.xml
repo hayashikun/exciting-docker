@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<input>
+  <title>Gold</title>
+  <structure speciespath="/usr/local/src/exciting/species">
+    <crystal>
+      <basevect>   3.853500000       3.853500000       0.000000000</basevect>
+      <basevect>   3.853500000       0.000000000       3.853500000</basevect>
+      <basevect>   0.000000000       3.853500000       3.853500000</basevect>
+    </crystal>
+    <species speciesfile="Au.xml" rmt="2.0000">
+      <atom coord="0.0000000000      0.0000000000      0.0000000000"/>
+    </species>
+  </structure>
+</input>

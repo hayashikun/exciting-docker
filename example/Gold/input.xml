@@ -1,0 +1,36 @@
+<input>
+
+   <title>Gold</title>
+
+   <structure speciespath="/usr/local/src/exciting/species">
+
+      <crystal scale="7.707">
+         <basevect>0.5 0.5 0.0</basevect>
+         <basevect>0.5 0.0 0.5</basevect>
+         <basevect>0.0 0.5 0.5</basevect>
+      </crystal>
+
+      <species speciesfile="Au.xml">
+         <atom coord="0.0  0.0  0.0" />
+      </species>
+
+   </structure>
+
+   <groundstate xctype="GGA_PBE_SOL" ngridk="8 8 8" outputlevel="normal">
+   </groundstate>
+
+   <properties>
+      <bandstructure>
+         <plot1d>
+            <path steps="100">
+               <point coord="0.000   0.000   0.000" label="GAMMA"/>
+               <point coord="0.500   0.500   0.000" label="X" />
+               <point coord="0.750   0.500   0.250" label="W" />
+               <point coord="0.500   0.500   0.500" label="L" />
+               <point coord="0.000   0.000   0.000" label="GAMMA"/>
+               <point coord="0.750   0.375   0.375" label="K" />
+            </path>
+         </plot1d>
+      </bandstructure>
+   </properties>
+</input>
