@@ -1,0 +1,4 @@
+*.out
+*.rap
+.ipynb_checkpoints
+.idea/
