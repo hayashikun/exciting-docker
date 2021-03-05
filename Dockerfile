@@ -1,5 +1,7 @@
 FROM ubuntu:latest
 
+ENV DEBIAN_FRONTEND "noninteractive"
+
 RUN apt-get update \
     && apt-get install -y \
         git \
@@ -32,24 +34,24 @@ RUN apt-get update \
 WORKDIR /usr/local/src
 
 ## exciting installation
-RUN curl http://exciting.wdfiles.com/local--files/nitrogen/exciting.nitrogen.tar.gz -O -L
-RUN tar xvf exciting.nitrogen.tar.gz \
-    && rm -rf exciting.nitrogen.tar.gz
+RUN curl http://exciting.wdfiles.com/local--files/nitrogen-14/exciting.nitrogen-14.tar.gz -O -L
+RUN tar xvf exciting.nitrogen-14.tar.gz \
+    && rm -rf exciting.nitrogen-14.tar.gz
 COPY res/make.inc ./exciting/build
 RUN cd exciting/ && make
 ENV EXCITINGROOT /usr/local/src/exciting
 ENV PATH $PATH:$EXCITINGROOT/bin
 
 ## Python installation
-RUN curl https://www.python.org/ftp/python/3.8.0/Python-3.8.0.tgz -O -L \
-    && tar zxf Python-3.8.0.tgz \
-    && rm -rf Python-3.8.0.tgz \
-    && cd Python-3.8.0 \
+RUN curl https://www.python.org/ftp/python/3.9.2/Python-3.9.2.tgz -O -L \
+    && tar zxf Python-3.9.2.tgz \
+    && rm -rf Python-3.9.2.tgz \
+    && cd Python-3.9.2 \
     && ./configure \
     && make \
     && make altinstall \
-    && ln -s /usr/local/bin/python3.8 /usr/bin/python \
-    && ln -s /usr/local/bin/pip3.8 /usr/bin/pip
+    && ln -s /usr/local/bin/python3.9 /usr/bin/python \
+    && ln -s /usr/local/bin/pip3.9 /usr/bin/pip
 ENV PYTHONIOENCODING "utf-8"
 RUN pip install pip -U \
     && pip install \
