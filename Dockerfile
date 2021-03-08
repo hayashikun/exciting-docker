@@ -64,6 +64,7 @@ RUN pip install pip -U \
         Pillow \
         ase \
         joblib \
-        Cython
+        Cython \
+        fire
 
 WORKDIR /root
